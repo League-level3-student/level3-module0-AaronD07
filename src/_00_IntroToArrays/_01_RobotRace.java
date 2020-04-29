@@ -15,12 +15,26 @@ public class _01_RobotRace {
 			robs[i]=new Robot();
 			robs[i].setX(i*200);
 			robs[i].setY(600);
-			Random random = new Random(50);
-			robs[i].move(random.nextInt()-60);
+			
+		}
+		Random random = new Random();
+		outer: for(int j=0; j<100; j++) {
+			
+		
+		for (int o =0; o<robs.length; o++) {
+			robs[o].setSpeed(10);
+		
+			robs[o].move(random.nextInt(50));
+			if (robs [o].getY()<=0) {
+				JOptionPane.showMessageDialog(null, "The winner is: Robot " +o);
+				j=100;
+				break outer;
+				
+			}
 		}
 		
 		
-		
+		}
 		
 		
 		}
